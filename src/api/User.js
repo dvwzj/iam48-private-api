@@ -44,7 +44,7 @@ export default class User {
             if (!contentId) {
                 throw new Error('[contentId] is required.')
             }
-            const res = await this.$http.post(`/member-live/${contentId}`)
+            const res = await this.$http.get(`/member-live/${contentId}`)
             return res.data
         } catch (e) {
             console.error(e)
