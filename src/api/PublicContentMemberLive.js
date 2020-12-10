@@ -28,4 +28,15 @@ export default class PublicContentMemberLive {
             console.error(e)
         }
     }
+    async stats(contentId) {
+        try {
+            if (!contentId) {
+                throw new Error('[contentId] is required.')
+            }
+            const res = await this.$http.get(`/video/${contentId}/stats`)
+            return res.data
+        } catch (e) {
+            console.error(e)
+        }
+    }
 }
