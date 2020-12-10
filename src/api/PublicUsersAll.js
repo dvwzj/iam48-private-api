@@ -14,11 +14,13 @@ export default class PublicUsersAll {
                 ].join('/'),
             }),
         })
-        Object.defineProperty(this.toprank, 'today', {
-            value: () => {
-                return new PublicUsersAllToprank(this).today()
-            }
-        })
+        if (!this.toprank.today) {
+            Object.defineProperty(this.toprank, 'today', {
+                value: () => {
+                    return new PublicUsersAllToprank(this).today()
+                }
+            })
+        }
     }
     async toprank() {
         try {

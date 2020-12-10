@@ -26,11 +26,13 @@ export default class UserUser {
                 })
             },
         })
-        Object.defineProperty(this.notification, 'sound', {
-            value: () => {
-                return new UserUserNotification(this).sound()
-            }
-        })
+        if (!this.notification.sound) {
+            Object.defineProperty(this.notification, 'sound', {
+                value: () => {
+                    return new UserUserNotification(this).sound()
+                }
+            })
+        }
         this.badge = new UserUserBadge(this)
         this.likes = new UserUserLikes(this)
         this.follows = new UserUserFollows(this)

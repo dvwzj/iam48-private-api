@@ -30,16 +30,20 @@ export default class Public {
         this.timeline = new PublicTimeline(this)
         this.users = new PublicUsers(this)
         this.comment = new PublicComment(this)
-        Object.defineProperty(this.theater, 'playback', {
-            value: (params) => {
-                return new PublicTheater(this).playback(params)
-            }
-        })
-        Object.defineProperty(this.schedules, 'memberLive', {
-            value: (liveId) => {
-                return new PublicSchedules(this).memberLive(liveId)
-            }
-        })
+        if (!this.theater.playback) {
+            Object.defineProperty(this.theater, 'playback', {
+                value: (params) => {
+                    return new PublicTheater(this).playback(params)
+                }
+            })
+        }
+        if (!this.schedules.memberLive) {
+            Object.defineProperty(this.schedules, 'memberLive', {
+                value: (liveId) => {
+                    return new PublicSchedules(this).memberLive(liveId)
+                }
+            })
+        }
     }
     async games() {
         try {

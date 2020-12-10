@@ -13,9 +13,11 @@ export default class PublicProducts {
                 ].join('/'),
             }),
         })
-        Object.defineProperty(this.gift, 'section', {
-            value: new PublicProductsGift(this).section,
-        })
+        if (!this.gift.section) {
+            Object.defineProperty(this.gift, 'section', {
+                value: new PublicProductsGift(this).section,
+            })
+        }
     }
     async gift() {
         try {
