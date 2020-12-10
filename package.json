@@ -1,6 +1,6 @@
 {
   "name": "iam48-private-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "iAM48 Application Private API",
   "main": "lib/index.js",
   "scripts": {
