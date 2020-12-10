@@ -1,3 +1,5 @@
+import _ from 'lodash'
+
 export default class PublicTheater {
     constructor(_public) {
         Object.defineProperty(this, '$public', {

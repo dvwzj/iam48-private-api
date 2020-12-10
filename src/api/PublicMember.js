@@ -1,3 +1,5 @@
+import _ from 'lodash'
+
 import PublicMemberFans from './PublicMemberFans'
 
 export default class PublicMember {

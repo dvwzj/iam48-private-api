@@ -1,4 +1,5 @@
 import _ from 'lodash'
+
 import PublicTimelineOnly from './PublicTimelineOnly'
 
 export default class PublicTimeline {

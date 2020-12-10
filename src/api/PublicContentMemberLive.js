@@ -1,3 +1,5 @@
+import _ from 'lodash'
+
 export default class PublicContentMemberLive {
     constructor(_content) {
         Object.defineProperty(this, '$content', {

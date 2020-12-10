@@ -1,3 +1,5 @@
+import _ from 'lodash'
+
 export default class PublicComment {
     constructor(_public) {
         Object.defineProperty(this, '$public', {
