@@ -83,7 +83,7 @@ export default class Public {
     }
     async schedules() {
         try {
-            const res = await this.$http.get('/schedules')
+            const res = await this.$http.get('/schedules/member-live')
             return res.data
         } catch (e) {
             console.error(e)
