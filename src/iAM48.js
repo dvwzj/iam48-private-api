@@ -3,6 +3,7 @@ import { ReqFastPromise } from 'req-fast-promise'
 import Public from './api/Public'
 import User from './api/User'
 import CoinUserbalance from './api/CoinUserbalance'
+import Live from './api/Live'
 
 export default class iAM48 {
     constructor(defaults) {
@@ -25,6 +26,7 @@ export default class iAM48 {
         this.public = new Public(this)
         this.user = new User(this)
         this.coin = new CoinUserbalance(this)
+        this.live = new Live(this)
     }
     Singleton(email, password) {
         try {

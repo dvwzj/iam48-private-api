@@ -14,9 +14,9 @@ export default class PublicSchedules {
             }),
         })
     }
-    async memberLive(liveId) {
+    async memberLive(scheduleId) {
         try {
-            const res = await this.$http.get(`/member-live/${liveId || ''}`)
+            const res = await this.$http.get(`/member-live/${scheduleId || ''}`)
             return res.data
         } catch (e) {
             console.error(e)
