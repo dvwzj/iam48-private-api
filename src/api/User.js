@@ -50,7 +50,7 @@ export default class User {
             console.error(e)
         }
     }
-    async batchThankyouVideo (contentId) {
+    async batchThankyouVideo(contentId) {
         try {
             if (!this.$data.id) {
                 throw new Error('Unauthorized')
@@ -59,6 +59,20 @@ export default class User {
                 throw new Error('[contentId] is required.')
             }
             const res = await this.$http.get(`/batch-thankyou-video/${contentId}`)
+            return res.data
+        } catch (e) {
+            console.error(e)
+        }
+    }
+    async timelineVideo(contentId) {
+        try {
+            if (!this.$data.id) {
+                throw new Error('Unauthorized')
+            }
+            if (!contentId) {
+                throw new Error('[contentId] is required.')
+            }
+            const res = await this.$http.get(`/timeline-video/${contentId}`)
             return res.data
         } catch (e) {
             console.error(e)
