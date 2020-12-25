@@ -68,9 +68,15 @@ export default class PublicTimeline {
             console.error(e)
         }
     }
-    async contentMemberTimeline(contentId) {
+    async timelineContent(contentType, contentId) {
         try {
-            const res = await this.$http.get(`/content-member-timeline/${contentId}`)
+            if (!contentType) {
+                throw new Error('[contentType] is required.')
+            }
+            if (!contentId) {
+                throw new Error('[contentId] is required.')
+            }
+            const res = await this.$http.get(`/${contentType}/${contentId}`)
             return res.data
         } catch (e) {
             console.error(e)
