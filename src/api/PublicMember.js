@@ -28,6 +28,17 @@ export default class PublicMember {
             console.error(e)
         }
     }
+    async stats(memberId) {
+        try {
+            if (!memberId) {
+                throw new Error('[memberId] is required.')
+            }
+            const res = await this.$http.get(`/${memberId}/stats`)
+            return res.data
+        } catch (e) {
+            console.error(e)
+        }
+    }
     async memberLive(memberId, params) {
         try {
             if (!memberId) {
